@@ -7,10 +7,25 @@ import java.util.stream.IntStream;
 
 public class FizzBuzz {
 
+    public static void main(String[] args) {
+        System.out.println("Step 1");
+        execute1(100);
+
+        System.out.println("Step 1");
+        execute2(100);
+    }
+
+    /*
+    This implements step1 requirements, multiples of 3 buzz, multiples of 5 fizz, multiples of 15 FizzBuzz
+     */
     public static List<String> execute1(int max) {
         return execute(max, FizzBuzz::isFizz, FizzBuzz::isBuzz);
     }
 
+    /*
+    This implements step2 requirements, multiples of 3 or numbers with 3 in them -> buzz,
+    multiples of 5 or numbers with 5 in them fizz, multiples of 15 or numbers with 3 or 5 -> FizzBuzz
+     */
     public static List<String> execute2(int max) {
         return execute(max, FizzBuzz::isFizz2, FizzBuzz::isBuzz2);
     }
