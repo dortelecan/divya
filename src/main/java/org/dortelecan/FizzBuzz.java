@@ -23,11 +23,13 @@ public class FizzBuzz {
     }
 
     private static String map(int x, Predicate<Integer> fizz, Predicate<Integer> buzz) {
-        if (fizz.test(x) && buzz.test(x)) {
+        boolean isfizz = fizz.test(x);
+        boolean isbuzz = buzz.test(x);
+        if (isbuzz && isfizz) {
             return "FizzBuzz";
-        } else if (fizz.test(x)) {
+        } else if (isfizz) {
             return "Fizz";
-        } else if (buzz.test(x)) {
+        } else if (isbuzz) {
             return "Buzz";
         } else {
             return String.valueOf(x);
